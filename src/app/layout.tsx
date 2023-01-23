@@ -3,6 +3,7 @@
 import { RecoilRoot } from 'recoil';
 
 import '@/app/globals.css';
+import { AppHeader } from '@/components/common/site/molecules/AppHeader';
 
 export default function RootLayout({
   children,
@@ -17,7 +18,12 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <RecoilRoot>{children}</RecoilRoot>
+        <RecoilRoot>
+          <div className="h-[10dvh] bg-base-200">
+            <AppHeader />
+          </div>
+          <div className="h-[90dvh] bg-base-100">{children}</div>
+        </RecoilRoot>
       </body>
     </html>
   );
