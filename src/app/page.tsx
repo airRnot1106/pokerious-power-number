@@ -1,7 +1,9 @@
+import { AppHero } from '@/components/common/site/molecules/AppHero';
+
 export default function Home() {
   return (
-    <main className="p-5">
-      <h1 className="text-5xl font-bold">Next-Template-V2</h1>
+    <main className="h-full">
+      <AppHero />
     </main>
   );
 }
