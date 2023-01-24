@@ -5,7 +5,7 @@ import { useRecoilValue } from 'recoil';
 import { InputCell } from '@/components/case/input/atoms/InputCell';
 
 import { useUpdatePowerNumberTable } from '@/stores/power-number-table/operations';
-import { powerNumberTableState } from '@/stores/power-number-table/selectors';
+import { powerNumberTableCellState } from '@/stores/power-number-table/selectors';
 
 interface PowerNumberInputCellProps {
   size?: 'sm' | 'lg';
@@ -19,7 +19,9 @@ export const PowerNumberInputCell = ({
   isDisabled = false,
 }: PowerNumberInputCellProps) => {
   const [rIndex, cIndex] = indices;
-  const powerNumber = useRecoilValue(powerNumberTableState({ rIndex, cIndex }));
+  const powerNumber = useRecoilValue(
+    powerNumberTableCellState({ rIndex, cIndex })
+  );
   const updatePowerNumberTable = useUpdatePowerNumberTable();
   return (
     <>
