@@ -11,7 +11,7 @@ export const AppHero = () => {
         <Link href="fill-in" className="btn-primary btn">
           Fill In Mode
         </Link>
-        <Link href="calc" className="btn-primary btn">
+        <Link href="calc" className="btn-disabled btn-primary btn">
           Calc Mode
         </Link>
       </div>
