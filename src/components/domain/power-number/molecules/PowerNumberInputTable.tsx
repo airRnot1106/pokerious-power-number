@@ -28,9 +28,15 @@ export const PowerNumberInputTable = ({
     <>
       {PlayingCard.reverseRanks.map((rank, rIndex) => (
         <tr key={`b${rank[1]}`}>
-          <th>{rank[1]}</th>
+          <th className={size === 'lg' ? 'h-10 w-10' : 'h-6 w-6'}>{rank[1]}</th>
           {powerNumberTableKeys.map((_, cIndex) => (
-            <td key={`c${rIndex}${cIndex}`} className="border-collapse border">
+            <td
+              key={`c${rIndex}${cIndex}`}
+              className={
+                'border-collapse border ' +
+                (size === 'lg' ? 'h-10 w-10' : 'h-6 w-6')
+              }
+            >
               <PowerNumberInputCell
                 size={size}
                 indices={[rIndex, cIndex]}

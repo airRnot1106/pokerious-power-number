@@ -23,7 +23,7 @@ export const InputCell = ({
       disabled={isDisabled}
       className={
         'input input-xs m-0 p-0 text-center ' +
-        (size === 'lg' ? 'h-10 w-10' : 'h-4 w-4')
+        (size === 'lg' ? 'h-10 w-10' : 'h-6 w-6')
       }
       onChange={(e) => onChange(indices, e.target.value)}
     />
