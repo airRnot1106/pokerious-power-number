@@ -41,6 +41,11 @@
     "daisyui",
     "nonconstructor",
     "Parens",
+    "pokerious",
     "tailwindcss"
-  ]
+  ],
+
+  // TypeScriptのバージョンを指定する
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
