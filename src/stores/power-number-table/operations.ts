@@ -2,6 +2,8 @@ import { useRecoilCallback } from 'recoil';
 
 import { powerNumberTableAtom } from '@/stores/power-number-table/atoms';
 
+import { powerNumberTable } from '@/utils/poker/powerNumber';
+
 export const useUpdatePowerNumberTable = () =>
   useRecoilCallback(
     ({ set }) =>
@@ -19,3 +21,20 @@ export const useUpdatePowerNumberTable = () =>
         );
       }
   );
+
+export const useResetPowerNumberTable = () =>
+  useRecoilCallback(({ set }) => () => {
+    const keys = Object.keys(powerNumberTable);
+    keys.forEach((_, rIndex) => {
+      keys.forEach((_, cIndex) => {
+        const defaultValue = (() => {
+          const powerNumber = powerNumberTable[rIndex]?.[cIndex];
+          if (!powerNumber) return '';
+          if (powerNumber === Infinity) return '∞';
+          if (powerNumber === -Infinity) return '-∞';
+          return '';
+        })();
+        set(powerNumberTableAtom({ rIndex, cIndex }), (_prev) => defaultValue);
+      });
+    });
+  });
